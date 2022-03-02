@@ -2,7 +2,7 @@
 
 ### Support library for string manipulation
 
-<br><div><img src="image.png" width="350" height="80"/></div><br>
+<br><div><img src="image.png" width="350" height="85"/></div><br>
 
 # Reference
 
