@@ -13,7 +13,7 @@
 - **string_replace**
    > <pre>char *string_replace(const char *source, const char *target, const char *new_string, bool sensitive)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - target: string to be replaced
     - space: new string space
     - sensitive: case sensitive search
@@ -23,7 +23,7 @@
 - **string_readat**
    > <pre>char *string_readat(const char *source, char character, bool sensefrom)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - character: delimiter character
     - sensefrom: if positive it will travel from the beginning to the end, if negative it will travel from the end to the beginning
   - Returns:
@@ -31,36 +31,38 @@
 - **string_toreverse**
    > <pre>char *string_toreverse(char *source)</pre>
   - Arguments:
-     - source: source string
+     - source: the source string
   - Returns:
     - The source string reversed
 
 - **string_reverse**
    > <pre>char *string_reverse(char *source)</pre>
   - Arguments:
-     - source: source string
+     - source: the source string
   - Returns:
     - A copy of source string reversed
 
 - **string_split**
-   > <pre>char ** string_split(const char *source, const char *target, bool sensitive)</pre>
+   > <pre>char **string_split(const char *source, const char *target, const char *space, bool sensitive)</pre>
   - Arguments:
-    - source: source string
-    - target: string to delimit
+    - source: the source string
+    - target: string to be replaced
+    - space: new string that will replace the cases
+    - sensitive: case sensitice search
   - Returns:
     - An array of strings with all splitted parts
 
 - **string_length**
    > <pre>size_t string_length(const char *)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
     - The length of the string discarding the null character
 
 - **string_repeat**
    > <pre>char *string_repeat(const char *source, size_t times)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - times: number of times to repeat
   - Returns
     - A new string containing repetitions of the source string according to the number of times
@@ -68,41 +70,41 @@
 - **string_chomp**
    > <pre>char *string_chomp(char *source)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
-    - The source string without the last line break sequence
+    - The source string without the last line break sequence(\n) character
 
 - **string_zero**
    > <pre>char *string_zero(char *source, size_t size)</pre>
   - Arguments:
-    - source: source string
-    - size: size of the source string
+    - source: the source string
+    - size: the size to be cleaned
   - Returns:
     - The source string emptied/zeroed
 
 - **string_toupper**
    > <pre>char *string_toupper(char *source)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
     - The uppercase source string
 - **string_upper**
    > <pre>char *string_upper(char *source)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
     - A copy of the source string in uppercase
 
 - **string_tolower**
    > <pre>char *string_tolower(char *source)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
     - The lowercase source string
 - **string_lower**
    > <pre>char *string_lower(char *source)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
   - Returns:
     - A copy of the source string in lowercase
 
@@ -117,7 +119,7 @@
 - **string_write**
    > <pre>char *string_write(char *source, const char *string, size_t size)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - string: constant to be written in the source string
     - size: the character capacity that the source string supports
   - Returns:
@@ -125,7 +127,7 @@
 - **string_concat**
    > <pre>char *string_concat(char *source, const char *string, size_t size)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - string: constant to be concaneted with the source string
     - size: the character capacity that the source string supports
   - Returns:
@@ -134,7 +136,7 @@
 - **string_compare**
    > <pre>bool string_compare(char *source, const char *string, size_t size, bool sensitive)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - string: constant to be compared with the source string
     - size: number of characters to be compared
     - sensitive: case sensitive comparison
@@ -144,7 +146,7 @@
 - **string_match**
    > <pre>bool string_match(char *source, const char *string, bool sensitive)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - string: constant to be matches with the source string
     - sensitive: case sensitive matching
   - Returns:
@@ -153,7 +155,7 @@
 - **string_search**
    > <pre>char *string_search(char *source, const char *string, bool sensitive)</pre>
   - Arguments:
-    - source: source string
+    - source: the source string
     - string: constant to be searched in the source string
     - sensitive: case sensitive search
   - Returns:
