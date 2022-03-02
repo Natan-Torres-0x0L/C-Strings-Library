@@ -22,6 +22,8 @@ extern char **string_split(const char *, const char *, bool);
 
 extern size_t string_length(const char *);
 
+extern char *string_repeat(const char *, size_t);
+
 extern char *string_chomp(char *);
 extern char *string_zero(char *, size_t);
 

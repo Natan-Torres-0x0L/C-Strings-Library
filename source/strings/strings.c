@@ -191,6 +191,21 @@ string_length(const char *source) {
 }
 
 char *
+string_repeat(const char *source, size_t times) {
+  size_t size = (string_length(source)*times)+1;
+
+  char *stringZ = NULL;
+
+  if (!(stringZ = (char *)calloc(size, sizeof(char))))
+    return NULL;
+
+  while (times--)
+    string_concat(stringZ, source, size);
+
+  return stringZ;
+}
+
+char *
 string_chomp(char *source) {
   char *stringA = source+string_length(source)-1;
 
