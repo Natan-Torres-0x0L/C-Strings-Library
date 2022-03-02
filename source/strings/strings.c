@@ -106,11 +106,11 @@ char *
 string_reverse(const char *source) {
   size_t size = string_length(source);
 
-  const char *stringA = source+string_length(source)-1;
+  const char *stringA = source+size-1;
   char *stringZ = NULL;
   char *stringX = NULL;
 
-  if (!(stringZ = (char *)calloc(string_length(source)+1, sizeof(char))))
+  if (!(stringZ = (char *)calloc(size+1, sizeof(char))))
     return NULL;
   stringX = stringZ;
 
