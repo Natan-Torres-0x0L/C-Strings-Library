@@ -6,6 +6,41 @@
 
 # Reference
 
+## Functions that the library provides
+
+- [string_replace](#string_replace)
+
+- [string_readat](#string_readat)
+
+- [string_toreverse](#string_toreverse)
+- [string_reverse](#string_reverse)
+
+- [string_split](#string_split)
+
+- [string_length](#string_length)
+
+- [string_repeat](#string_repeat)
+
+- [string_chomp](#string_chomp)
+- [string_zero](#string_zero)
+
+- [string_toupper](#string_toupper)
+- [string_upper](#string_upper)
+
+- [string_tolower](#string_tolower)
+- [string_lower](#string_lower)
+
+- [string_format](#string_format)
+
+- [string_write](#string_write)
+- [string_concat](#string_concat)
+
+- [string_compare](#string_compare)
+- [string_match](#string_match)
+- [string_search](#string_search)
+
+## Syntax
+
 ## string_replace
   > <pre>char *string_replace(const char *source, const char *string, const char *newstring, int nstrings, bool sensitive)</pre>
   Arguments:
