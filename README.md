@@ -4,7 +4,7 @@
 
 <br><div>
   <!--<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" width="185" height="200"/>-->
-  <img src="image.png" width="350" height="90"/>
+  <img src="image.png" width="350" height="80"/>
 
 </div><br>
 
@@ -12,9 +12,13 @@
 
 - **string_replace**
    > <pre>char *string_replace(const char *source, const char *target, const char *new_string, bool sensitive)</pre>
-     <p>Returns:
-          A copy of the string with all cases replaced
-     </p>
+  - Arguments:
+    - source: source string
+    - target: string to be replaced
+    - space: new string space
+    - sensitive: case sensitive search
+  - Returns:
+    - A copy of the string with all cases replaced</p>
 - **string_readat**
 
 - **string_toreverse**
