@@ -1,5 +1,5 @@
 # C Advanced Strings Library
-### Support library to string manipulation for C language
+### Support library to string manipulation
 
 <br><div><img src="image.png" width="350" height="80"/></div><br>
 
