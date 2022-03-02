@@ -6,7 +6,7 @@
 
 
 char *
-string_replace(const char *source, const char *target, const char *space, bool sensitive) {
+string_replace(const char *source, const char *string, const char *newstring, int nstrings, bool sensitive) {
   size_t matches = 0, size;
 
   char *stringA = (char *)source;
@@ -16,18 +16,21 @@ string_replace(const char *source, const char *target, const char *space, bool s
   char *stringX = NULL;
   char *stringZ = NULL;
 
-  for (; (stringB = string_search(stringA, target, sensitive)); matches++)
+  for (; (stringB = string_search(stringA, string, sensitive)); matches++)
     stringA = stringB+1;
+
+  if (!(nstrings < 0 || nstrings > matches))
+    matches = nstrings; 
 
   stringA = (char *)source;
 
-  size = (string_length(source)-(string_length(target)*matches))+(string_length(space)*matches);
+  size = (string_length(source)-(string_length(string)*matches))+(string_length(newstring)*matches);
   if (!(stringZ = (char *)calloc(size+1, sizeof(char))))
     return NULL;
   stringX = stringZ;
 
   while (matches) {
-    stringB = stringA, stringC = (char *)target;
+    stringB = stringA, stringC = (char *)string;
 
     if (!sensitive)
       while (*stringB && *stringC && (*stringB >= 'a' && *stringB <= 'z' ? *stringB-('a'-'A') : *stringB) == (*stringC >= 'a' && *stringC <= 'z' ? *stringC-('a'-'A') : *stringC))
@@ -37,13 +40,13 @@ string_replace(const char *source, const char *target, const char *space, bool s
         stringB++, stringC++;
 
     if (!*stringC) {
-      stringD = (char *)space;
+      stringD = (char *)newstring;
 
       while (*stringD)
         *stringX++ = *stringD++;
 
       if ((--matches) != 0) {
-        stringA += string_length(target);
+        stringA += string_length(string);
         continue;
       }
 
@@ -121,7 +124,7 @@ string_reverse(const char *source) {
 }
 
 char **
-string_split(const char *source, const char *target, bool sensitive) {
+string_split(const char *source, const char *string, bool sensitive) {
   size_t strings = 0, size = 0;
 
   bool measured = false;
@@ -133,8 +136,8 @@ string_split(const char *source, const char *target, bool sensitive) {
   char *stringX = NULL;
   char **stringZ = NULL;
 
-  for (; (stringA = string_search(stringB, target, sensitive)); size++)
-    stringB = stringA+string_length(target);
+  for (; (stringA = string_search(stringB, string, sensitive)); size++)
+    stringB = stringA+string_length(string);
 
   if (!(stringZ = (char **)calloc(++size+1, sizeof(char *))))
     return NULL;
@@ -145,7 +148,7 @@ string_split(const char *source, const char *target, bool sensitive) {
   size = 0;
 
   while (true) {
-    stringC = (measured ? stringB : stringA), stringD = (char *)target;
+    stringC = (measured ? stringB : stringA), stringD = (char *)string;
 
     if (!sensitive)
       while (*stringC && *stringD && (*stringC >= 'a' && *stringC <= 'z' ? *stringC-('a'-'A') : *stringC) == (*stringD >= 'a' && *stringD <= 'z' ? *stringD-('a'-'A') : *stringD))
@@ -156,7 +159,7 @@ string_split(const char *source, const char *target, bool sensitive) {
 
     if (!*stringC || !*stringD) {
       if (measured) {
-        stringB += string_length(target), measured = false;
+        stringB += string_length(string), measured = false;
         if (!*stringC)
           break;
       }
@@ -166,7 +169,7 @@ string_split(const char *source, const char *target, bool sensitive) {
         stringX = stringZ[strings];
 
         strings++, size = 0, measured = true;
-        stringA += string_length(target);
+        stringA += string_length(string);
 
         continue;
       }
@@ -192,11 +195,11 @@ string_length(const char *source) {
 
 char *
 string_repeat(const char *source, size_t times) {
-  size_t size = (string_length(source)*times)+1;
+  size_t size = string_length(source)*times;
 
   char *stringZ = NULL;
 
-  if (!(stringZ = (char *)calloc(size, sizeof(char))))
+  if (!(stringZ = (char *)calloc(size+1, sizeof(char))))
     return NULL;
 
   while (times--)
@@ -343,9 +346,12 @@ string_concat(char *source, const char *string, size_t size) {
 }
 
 bool
-string_compare(const char *source, const char *string, size_t size, bool sensitive) {
+string_compare(const char *source, const char *string, int size, bool sensitive) {
   const char *stringA = source;
   const char *stringB = string;
+
+  if (size < 0)
+    size = (int)string_length(source);
 
   if (!sensitive)
     while (size && *stringA && *stringB && (*stringA >= 'a' && *stringA <= 'z' ? *stringA-('a'-'A') : *stringA) == (*stringB >= 'a' && *stringB <= 'z' ? *stringB-('a'-'A') : *stringB))

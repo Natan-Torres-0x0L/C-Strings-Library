@@ -11,7 +11,7 @@ extern "C" {
 #include <stddef.h>
 
 
-extern char *string_replace(const char *, const char *, const char *, bool);
+extern char *string_replace(const char *, const char *, const char *, int, bool);
 
 extern char *string_readat(const char *, char, bool);
 
@@ -38,7 +38,7 @@ extern char *string_format(const char *, ...);
 extern char *string_write(char *, const char *, size_t);
 extern char *string_concat(char *, const char *, size_t);
 
-extern bool string_compare(const char *, const char *, size_t, bool);
+extern bool string_compare(const char *, const char *, int, bool);
 extern bool string_match(const char *, const char *, bool);
 extern char *string_search(const char *, const char *, bool);
 
