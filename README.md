@@ -38,6 +38,7 @@
 - [string_compare](#string_compare)
 - [string_match](#string_match)
 - [string_search](#string_search)
+<br>
 
 ## Syntax
 
