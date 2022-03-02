@@ -174,4 +174,4 @@
    - `sensitive`: case sensitive search
 
   Returns:
-   - If found the source string from the found constant, otherwise null
+   - The part where the constant string starts if found in the source string, otherwise null
