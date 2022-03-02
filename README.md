@@ -48,7 +48,7 @@
    - `source`: the source string
    - `target`: string to be replaced
    - `space`: new string that will replace the cases
-   - `sensitive`: case sensitice search
+   - `sensitive`: case sensitive search
 
   Returns:
    - An array of strings with all splitted parts
