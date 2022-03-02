@@ -8,12 +8,11 @@
 
 # Reference
 
-#### The library provides the following functions:
-
 - **string_replace**
-   > char \*string_replace(const char \*source, const char \*target, const char \*newstring, bool sensitive)
-     <p>Returns:</p>
-     A copy of the string with all cases replaced
+   > <pre>char *string_replace(const char *source, const char *target, const char *new_string, bool sensitive)</pre>
+     <p>Returns:
+          A copy of the string with all cases replaced
+     </p>
 - **string_readat**
 
 - **string_toreverse**
