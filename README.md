@@ -94,7 +94,7 @@
    - `source`: the source string
 
   Returns:
-   - The length of the string discarding the null character
+   - The length of the string discarding the null `\0` character
 
 ## string_repeat
   > <pre>char *string_repeat(const char *source, size_t times)</pre>
@@ -209,4 +209,4 @@
    - `sensitive`: case sensitive search
 
   Returns:
-   - The part where the constant string starts if found in the source string, otherwise null
+   - The part where the constant string starts if found in the source string, otherwise `NULL`
