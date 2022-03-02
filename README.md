@@ -154,7 +154,7 @@
    - `sensitive`: case sensitive comparison
 
   Returns:
-   - True if the strings are the same or false otherwise
+   - True if the strings are equals or false otherwise
 
 ## string_match
   > <pre>bool string_match(char *source, const char *string, bool sensitive)</pre>
