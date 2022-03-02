@@ -1,7 +1,7 @@
 # C Advanced Strings Library
 ### Support library to string manipulation for C language
 
-<br><div><img src="image.png" width="350" height="78"/></div><br>
+<br><div><img src="image.png" width="350" height="80"/></div><br>
 
 # Reference
 
