@@ -146,11 +146,11 @@
    - The source string concatenated with the constant
 
 ## string_compare
-  > <pre>bool string_compare(char *source, const char *string, size_t size, bool sensitive)</pre>
+  > <pre>bool string_compare(char *source, const char *string, int size, bool sensitive)</pre>
   Arguments:
    - `source`: the source string
    - `string`: constant to be compared with the source string
-   - `size`: number of characters to be compared
+   - `size`: number of characters to be compared, if negative, its value is the size of `source`
    - `sensitive`: case sensitive comparison
 
   Returns:
