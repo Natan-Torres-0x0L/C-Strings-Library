@@ -7,11 +7,12 @@
 # Reference
 
 ## string_replace
-  > <pre>char *string_replace(const char *source, const char *target, const char *space, bool sensitive)</pre>
+  > <pre>char *string_replace(const char *source, const char *string, const char *newstring, int nstrings, bool sensitive)</pre>
   Arguments:
    - `source`: the source string
-   - `target`: string to be replaced
-   - `space`: new string space that will replace the cases
+   - `string`: string to be replaced
+   - `newstring`: new string that will replace the cases
+   - `nstrings`: number of cases to be replaced, if negative all cases
    - `sensitive`: case sensitive search
 
   Returns:
@@ -43,11 +44,10 @@
    - A copy of source string reversed
 
 ## string_split
-  > <pre>char **string_split(const char *source, const char *target, const char *space, bool sensitive)</pre>
+  > <pre>char **string_split(const char *source, const char *string, bool sensitive)</pre>
   Arguments:
    - `source`: the source string
-   - `target`: string to be replaced
-   - `space`: new string that will replace the cases
+   - `string`: string that will be used as separator
    - `sensitive`: case sensitive search
 
   Returns:
