@@ -1,6 +1,6 @@
-<h1>C Advanced Strings Library</h1>
+<h1>C Strings Library</h1>
 
-### A support library for string manipulation
+### A support library for strings manipulation
 
 <br><div><img src="image.png" width="350" height="82"/></div><br>
 
