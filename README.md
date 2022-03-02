@@ -19,6 +19,7 @@
     - sensitive: case sensitive search
   - Returns:
     - A copy of source string with all cases replaced</p>
+
 - **string_readat**
    > <pre>char *string_readat(const char *source, char character, bool sensefrom)</pre>
   - Arguments:
@@ -42,6 +43,12 @@
     - A copy of souerce string reversed
 
 - **string_split**
+   > <pre>char ** string_split(const char *source, const char *target, bool sensitive)</pre>
+  - Arguments:
+    - source: source string
+    - target: string to delimit
+  - Returns:
+    - An array of strings with all splitted parts
 
 - **string_length**
    > <pre>size_t string_length(const char *)</pre>
@@ -49,6 +56,7 @@
     - source: source string
   - Returns:
     - The length of the string discarding the null character
+
 - **string_repeat**
    > <pre>char *string_repeat(const char *source, size_t times)</pre>
   - Arguments:
@@ -56,12 +64,14 @@
     - times: number of times to repeat
   - Returns
     - A new string containing repetitions of the source string according to the number of times
+
 - **string_chomp**
    > <pre>char *string_chomp(char *source)</pre>
   - Arguments:
     - source: source string
   - Returns:
     - The source string without the last line break sequence
+
 - **string_zero**
    > <pre>char *string_zero(char *source, size_t size)</pre>
   - Arguments:
@@ -69,13 +79,40 @@
     - size: size of the source string
   - Returns:
     - The source string emptied/zeroed
+
 - **string_toupper**
+   > <pre>char *string_toupper(char *source)</pre>
+  - Arguments:
+    - source: source string
+  - Returns:
+    - The uppercase source string
 - **string_upper**
+   > <pre>char *string_upper(char *source)</pre>
+  - Arguments:
+    - source: source string
+  - Returns:
+    - A copy of the source string in uppercase
 
 - **string_tolower**
+   > <pre>char *string_tolower(char *source)</pre>
+  - Arguments:
+    - source: source string
+  - Returns:
+    - The lowercase source string
 - **string_lower**
+   > <pre>char *string_lower(char *source)</pre>
+  - Arguments:
+    - source: source string
+  - Returns:
+    - A copy of the source string in lowercase
 
 - **string_format**
+   > <pre>char * string_format(const char *fmt, ...)</pre>
+  - Arguments:
+    - fmt: a string containing the format to be followed like printf, fprintf, vfprintf...
+    - ...: the arguments that will be formatted
+  - Returns:
+    - A new string formatted according to the arguments passed
 
 - **string_write**
 - **string_concat**
