@@ -7,11 +7,11 @@
 # Reference
 
 ## string_replace
-  > <pre>char *string_replace(const char *source, const char *target, const char *new_string, bool sensitive)</pre>
+  > <pre>char *string_replace(const char *source, const char *target, const char *space, bool sensitive)</pre>
   Arguments:
    - `source`: the source string
    - `target`: string to be replaced
-   - `space`: new string space
+   - `space`: new string space that will replace the cases
    - `sensitive`: case sensitive search
 
   Returns:
