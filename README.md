@@ -40,7 +40,7 @@
   - Arguments:
      - source: source string
   - Returns:
-    - A copy of souerce string reversed
+    - A copy of source string reversed
 
 - **string_split**
    > <pre>char ** string_split(const char *source, const char *target, bool sensitive)</pre>
@@ -107,7 +107,7 @@
     - A copy of the source string in lowercase
 
 - **string_format**
-   > <pre>char * string_format(const char *fmt, ...)</pre>
+   > <pre>char *string_format(const char *fmt, ...)</pre>
   - Arguments:
     - fmt: a string containing the format to be followed like printf, fprintf, vfprintf...
     - ...: the arguments that will be formatted
@@ -115,9 +115,46 @@
     - A new string formatted according to the arguments passed
 
 - **string_write**
+   > <pre>char *string_write(char *source, const char *string, size_t size)</pre>
+  - Arguments:
+    - source: source string
+    - string: constant to be written in the source string
+    - size: the character capacity that the source string supports
+  - Returns:
+    - The source string containing the written constant
 - **string_concat**
+   > <pre>char *string_concat(char *source, const char *string, size_t size)</pre>
+  - Arguments:
+    - source: source string
+    - string: constant to be concaneted with the source string
+    - size: the character capacity that the source string supports
+  - Returns:
+    - The source string concatenated with the constant
 
 - **string_compare**
-- **string_match**
-- **string_search**
+   > <pre>bool string_compare(char *source, const char *string, size_t size, bool sensitive)</pre>
+  - Arguments:
+    - source: source string
+    - string: constant to be compared with the source string
+    - size: number of characters to be compared
+    - sensitive: case sensitive comparison
+  - Returns:
+    - True if the strings are the same or false otherwise
 
+- **string_match**
+   > <pre>bool string_match(char *source, const char *string, bool sensitive)</pre>
+  - Arguments:
+    - source: source string
+    - string: constant to be matches with the source string
+    - sensitive: case sensitive matching
+  - Returns:
+    - True if the strings are equals or false otherwise
+
+- **string_search**
+   > <pre>char *string_search(char *source, const char *string, bool sensitive)</pre>
+  - Arguments:
+    - source: source string
+    - string: constant to be searched in the source string
+    - sensitive: case sensitive search
+  - Returns:
+    - If found the source string from the found constant, otherwise null
